@@ -1,0 +1,123 @@
+/* ===== General Reset & Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ===== Header ===== */
+.header {
+  background: #ec0a8e;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ===== Navbar (Flexbox) ===== */
+.navbar {
+  background: #0509e7;
+}
+
+.navbar ul {
+  display: flex;                /* Flexbox for alignment */
+  justify-content: center;
+  list-style: none;
+}
+
+.navbar li {
+  margin: 0 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.navbar a:hover {
+  background: #4CAF50;
+  border-radius: 4px;
+}
+
+/* ===== Main Layout (Grid) ===== */
+.main-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* content + sidebar */
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* ===== Content Section ===== */
+.content h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Flexbox for cards */
+.card-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1;
+  padding: 1rem;
+  background: #0cf004;
+  border: 1px solid #030303;
+  text-align: center;
+  text-decoration-color: #f0f0f0;
+  border-radius: 6px;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  background: #0cf004;
+  padding: 1rem;
+  border-left: 3px solid #ddd;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* ===== Media Queries for Responsiveness ===== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .main-layout {
+    grid-template-columns: 2fr 1fr; /* narrower sidebar */
+  }
+
+  .card-container {
+    flex-direction: column; /* stack cards vertically */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column; /* stack nav links */
+    align-items: center;
+  }
+
+  .main-layout {
+    grid-template-columns: 1fr; /* stack content and sidebar */
+  }
+
+  .sidebar {
+    border-left: none;
+    border-top: 3px solid #ddd;
+    margin-top: 1rem;
+  }
+}
